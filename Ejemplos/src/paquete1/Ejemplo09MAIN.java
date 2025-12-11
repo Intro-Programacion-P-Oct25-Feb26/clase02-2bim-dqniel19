@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author reroes
  */
-public class Ejemplo102 {
+public class Ejemplo09MAIN {
 
     /**
      * @param args the command line arguments
@@ -20,31 +20,29 @@ public class Ejemplo102 {
         // Declarar y generar arreglos en Java
         
         // Se declara un arreglo de tipo double, llamado promedios
-        double[] promedios = {8.1, 9, 9.5, 10, 9.9};
+        double[] promedios =  {8.1, 9, 9.5, 10, 9.9};
         String[] estudiantes = {"Luis", "Ana", "Mónica", "José", "Juan"};
-        String nombre;
+        
         String mensajeFinal = ""; // variable que acumula un reporte final
         // Se hace uso del ciclo repetitivo for para recorrer los arreglos
         // y presentar los valore de las posiciones
-        
-        for (int i = 0; i < promedios.length; i++) { // estudiantes.length 
-            // Se agrega los valores al reporte siempe y cuando
-            // el valor del nombre del estudiante sea:
-            // Luis o Ana
-            nombre = estudiantes[i];
-            if (!nombre.equals("Luis")) {
-                // Al agregar ! al principio del comando, hace que la 
-                // condición apruebe a todos los valores que no sean iguales a "Luis"
-                mensajeFinal = String.format("%sEstudiante:%s - promedio: "
-                        + "%.4f\n", 
-                        mensajeFinal,
-                        estudiantes[i],
-                        promedios[i]);
-            }
+        int tamanio = promedios.length;
+        for (int i = 0; i < tamanio; i++) { // estudiantes.length 
+            mensajeFinal = String.format("%sEstudiante:%s - promedio: %.4f\n", 
+                    mensajeFinal,
+                    estudiantes[i].toUpperCase(),
+                    promedios[i]);
         }
         
         System.out.printf("%s\n", mensajeFinal);
+        /*
         
+        Estudiante:LUIS - promedio: 8,1000
+        Estudiante:ANA - promedio: 9,0000   
+        Estudiante:MÓNICA - promedio: 9,5000
+        Estudiante:JOSÉ - promedio: 10,0000
+        Estudiante:JUAN - promedio: 9,9000
+        */
     }
 
 }
